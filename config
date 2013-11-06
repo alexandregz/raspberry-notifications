@@ -1,0 +1,24 @@
+mailcheck
+screensocketpath	/var/run/screen
+chatmode icq yahoo msn aim irc jab gg
+convert icq yahoo msn aim irc jab rss lj gg infocard
+fromcharset	cp1251
+tocharset	koi8-r
+nobidi
+smtp	localhost:25
+browser	mozilla
+ptp	0-0
+protocolormode
+sort_by_status_and_activity
+left_panel_width	64
+log_panel_height	13
+chat_panel_height	9
+defaultauthmessage	Please accept my authorization to add you to my contact list.
+
+jab_nick	EMAIL
+jab_pass	PASSWORD
+jab_server	talk.google.com:5223
+jab_osinfo	1
+jab_prio	4
+jab_ssl	1
+jab_status	o

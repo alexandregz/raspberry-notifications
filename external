@@ -1,0 +1,9 @@
+%action contestador automagico
+event msg
+proto all
+status all
+options stdin stdout
+%exec
+msg=`cat`
+msg=`echo "$msg" | tr '[:upper:]' '[:lower:]'`
+/bin/bash DIRETORIO/contestador.sh $msg
