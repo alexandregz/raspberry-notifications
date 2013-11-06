@@ -15,7 +15,6 @@ Install
 Requirements
 ============
 - centerim installed
-- sendxmpp installed to use msg_centerim.sh
 
 
 Notes
