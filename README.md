@@ -10,7 +10,13 @@ Install
 - Use install.sh with bash shell.
 - Add this line to /etc/rc.local, always before 'exit 0':
     su pi -c '/home/pi/bin/centerim.sh'
-    
+
+
+Requirements
+============
+- centerim installed
+- sendxmpp installed to use msg_centerim.sh
+
 
 Notes
 =====
