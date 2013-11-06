@@ -51,7 +51,7 @@ sed -i.bak -e "s/RESOURCE_ACCOUNT_XMPP/$RESOURCE_ACCOUNT_XMPP/" msg_centerim.sh
 if [ ! -d "$DIRETORIO" ]; then
 	mkdir $DIRETORIO
 	#debug
-	mkdir -p $DIRETORIO_CENTERIM
+	#mkdir -p $DIRETORIO_CENTERIM
 fi
 
 
