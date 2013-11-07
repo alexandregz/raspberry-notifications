@@ -19,11 +19,6 @@ Requirements
 - centerim installed
 
 
-Notes
-=====
-
-To check first try to execute centerim into your system.
-
 
 Credit
 ======
