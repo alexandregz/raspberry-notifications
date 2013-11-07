@@ -7,7 +7,9 @@ Just a bash script to install a notification/commander system with Google Hangou
 Install
 =======
 
-- Use install.sh with bash shell.
+- $ sudo apt-get install centerim
+- $ centerim
+- $ /bin/bash install.sh
 - Add this line to /etc/rc.local, always before 'exit 0':
     su pi -c '/home/pi/bin/centerim.sh'
 
