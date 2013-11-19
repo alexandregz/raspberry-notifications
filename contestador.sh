@@ -38,11 +38,21 @@ case $1 in
 	;;
 
 	help)
-		echo "comandos: espacio, sh, help"
+		echo "comandos: espacio, sh, help, gitweb repositorio.git, gitweb stop"
 		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
 	;;
 
+	gitweb)
+		if [[ $2 == "stop" ]]; then
+			echo "parando gitweb..."
+			cd /opt/git/raspberry-notifications.git;sudo git instaweb --httpd=webrick --stop
+		else
+			echo "lanzando gitweb para $2..."
+			cd /opt/git/$2;sudo git instaweb --httpd=webrick -p 80
+		fi
+	;;
+
         *)
-                echo "$1 no lo entiendo, los comandos que entiendo son: espacio, sh, help "
+                echo "$1 no lo entiendo, los comandos que entiendo son: espacio, sh, help, gitweb [repositorio.git|stop] "
 	;;
 esac
