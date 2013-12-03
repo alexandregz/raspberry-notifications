@@ -38,7 +38,7 @@ case $1 in
 	;;
 
 	help)
-		echo "comandos: espacio, sh, help, gitweb, gitweb stop"
+		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura"
 		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
 	;;
 
@@ -52,7 +52,11 @@ case $1 in
 		fi
 	;;
 
+	temperatura)
+		vcgencmd measure_temp
+	;;
+
         *)
-                echo "$1 no lo entiendo, los comandos que entiendo son: espacio, sh, help, gitweb [stop] "
+                echo "$1 no lo entiendo, los comandos que entiendo son: espacio, sh, help, gitweb [stop], temperatura "
 	;;
 esac
