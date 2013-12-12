@@ -9,13 +9,14 @@ PASSWORD="PASSWORD_CONFIG"
 PASSWORD_RECIBIDO=$1
 
 COMANDOS_PROIBIDOS=( rm passwd )
+CONTAS_AUTORIZADAS=( RESOURCE_ACCOUNT_XMPP RESOURCE_ACCOUNT_XMPP2 )
 
 if [ "$PASSWORD_RECIBIDO" = "$PASSWORD" ]; then
 	shift
 fi
 
 # Alexandre Espinosa Menor: o contato debe ser o nosso (quitar o "j" de `ls -d $HOME/.centerim/*@public.talk.google.com`)
-if [ "$CONTACT_NICK" != 'RESOURCE_ACCOUNT_XMPP' ] && [ "$PASSWORD" != "$PASSWORD_RECIBIDO" ]; then
+if [[ ! " ${CONTAS_AUTORIZADAS[*]} " =~ " $CONTACT_NICK " ]] && [ "$PASSWORD" != "$PASSWORD_RECIBIDO" ]; then
 	echo "norl!"; 
 	exit 1;
 fi
