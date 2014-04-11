@@ -38,8 +38,18 @@ case $1 in
 		$@ 2>&1
 	;;
 
+	transmission)
+		if [[ $2 == "stop" ]]; then
+			echo "parando transmission-daemon..."
+			/etc/init.d/transmission-daemon stop
+		else
+			echo "lanzando transmission-daemon com config de transmission..."
+			transmission-daemon -g /home/pi/.config/transmission
+		fi
+	;;
+
 	help)
-		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura"
+		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura, transmission, transmission stop "
 		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
 	;;
 
@@ -58,6 +68,6 @@ case $1 in
 	;;
 
         *)
-                echo "$1 no lo entiendo, los comandos que entiendo son: espacio, sh, help, gitweb [stop], temperatura "
+                echo "$1 no lo entiendo, puedes utilizar: help "
 	;;
 esac
