@@ -38,6 +38,11 @@ case $1 in
 		$@ 2>&1
 	;;
 
+	help)
+		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura, msg_chat_work, transmission, transmission stop, xbmc, xbmc stop"
+		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
+	;;
+
 	transmission)
 		if [[ $2 == "stop" ]]; then
 			echo "parando transmission-daemon..."
@@ -48,10 +53,18 @@ case $1 in
 		fi
 	;;
 
-	help)
-		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura, transmission, transmission stop "
-		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
+
+	xbmc)
+		if [[ $2 == "stop" ]]; then
+			echo "parando xmbc ..."
+			killall /usr/lib/xbmc/xbmc.bin
+		else
+			echo "lanzando xmbc-standalone" 
+			xbmc-standalone
+		fi
 	;;
+
+
 
 	gitweb)
 		if [[ $2 == "stop" ]]; then
