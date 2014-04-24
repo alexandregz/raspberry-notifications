@@ -56,11 +56,11 @@ case $1 in
 
 	xbmc)
 		if [[ $2 == "stop" ]]; then
-			echo "parando xmbc ..."
-			killall /usr/lib/xbmc/xbmc.bin
+			echo "killing xbmc... "
+			sudo killall -9 xbmc.bin > /dev/null 2>&1
 		else
-			echo "lanzando xmbc-standalone" 
-			xbmc-standalone
+			echo "starting"
+			sudo /etc/init.d/xbmc start > /dev/null 2>&1
 		fi
 	;;
 
