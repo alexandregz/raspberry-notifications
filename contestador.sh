@@ -39,7 +39,7 @@ case $1 in
 	;;
 
 	help)
-		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura, msg_chat_work, transmission, transmission stop, xbmc, xbmc stop"
+		echo "comandos: espacio, sh, help, gitweb, gitweb stop, temperatura, msg_chat_work, transmission, transmission stop, xbmc, xbmc stop, mounthd, umounthd"
 		echo "comandos sh proibidos: ${COMANDOS_PROIBIDOS[@]} "
 	;;
 
@@ -64,6 +64,16 @@ case $1 in
 		fi
 	;;
 
+
+	mounthd)
+		echo "mounting HD..."
+		sudo mount /media/FreeAgentGoFlexDrive
+	;;
+
+	umounthd)
+		echo "unmounting HD..."
+		sudo umount /media/FreeAgentGoFlexDrive
+	;;
 
 
 	gitweb)
